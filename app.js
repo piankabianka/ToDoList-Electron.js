@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     //---------ADD A TASK
     
-        const tasksToAdd = [];
+        const tasksToDoToAdd = [];
         const taskInProgress=[];
         const taskDone=[];
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
             li.appendChild(moveButton);
             li.appendChild(deleteButton);
             
-            tasksToAdd.push(li);
+            tasksToDoToAdd.push(li);
     
             addForm.querySelector('input[type="text"]').value="";
         })
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
         addBall.addEventListener('animationend', (e)=>{
             e.target.classList.remove('add-ball-active');
             const list=document.querySelector('#to-do-list ul')
-            for(task of tasksToAdd){
+            for(task of tasksToDoToAdd){
                 list.appendChild(task);
             }
         })
@@ -148,5 +148,66 @@ document.addEventListener('DOMContentLoaded', function(){
             e.target.classList.remove('delete-ball-active');
         })
         
+
+        const saveButton=document.querySelector('#save-button');
+
+        saveButton.addEventListener('click', function(e){
+            e.preventDefault();
+            const listToDo=document.querySelector('#to-do-list ul');
+            const listInProgress=document.querySelector('#in-progress-list ul');
+            const listDone=document.querySelector('#done-list ul');
+
+            const tasksToDo=listToDo.getElementsByTagName('li');
+            tasksToDoArray=[];
+
+            const tasksInProgress=listInProgress.getElementsByTagName('li');
+            tasksInProgressArray=[];
+
+            const tasksDone=listDone.getElementsByTagName('li');
+            tasksDoneArray=[];
+
+            Array.from(tasksToDo).forEach(function(task){
+                tasksToDoArray.push(task.textContent);
+            })
+
+            Array.from(tasksInProgress).forEach(function(task){
+                tasksInProgressArray.push(task.textContent);
+            })
+
+            Array.from(tasksDone).forEach(function(task){
+                tasksDoneArray.push(task.textContent);
+            })
+
+            var fs=require('fs');
+
+            const jsnContent1=JSON.stringify(tasksToDoArray);
+            const jsnContent2=JSON.stringify(tasksInProgressArray);
+            const jsnContent3=JSON.stringify(tasksDoneArray);
+
+
+
+            fs.writeFile("./tasksToDo.json", jsnContent1, 'utf8', function(err){
+                if(err){
+                    console.log(err);
+                }
+                console.log("saved!");
+            })
+
+            fs.writeFile("./tasksInProgress.json", jsnContent2, 'utf8', function(err){
+                if(err){
+                    console.log(err);
+                }
+                console.log("saved!");
+            })
+
+            fs.writeFile("./tasksDone.json", jsnContent3, 'utf8', function(err){
+                if(err){
+                    console.log(err);
+                }
+                console.log("saved!");
+            })
+
+
+        })
     
     })
