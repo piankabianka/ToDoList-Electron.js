@@ -1,0 +1,279 @@
+body{
+    margin:0;
+    font-family: 'Roboto Condensed', sans-serif;
+   
+}
+#wrapper{
+    max-width:1000px;
+    height:1000px;
+    margin: 0px auto;
+    background-color: rgb(245, 245, 245);
+}
+
+
+/*------------NAWIGACJA------------*/
+
+#navigation{
+    background-color: #181730;
+    padding:5px;
+}
+
+#navigation ul{
+    list-style: none;
+    text-align: right;
+}
+
+#navigation li{
+    display: inline-block;
+    margin-right:15px;
+    font-size:18px;
+    color:whitesmoke;
+    padding:5px;
+}
+
+#navigation li:hover{
+    background-color: darkgray;
+    border-radius: 3px;
+    transition: 0.3s ease-in;
+}
+
+/*------------ADD TASK------------*/
+
+#add-task{
+    width: 400px;
+    margin: 0 auto;
+    
+}
+
+#add-task input{
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    width: 300px;
+    float:left;
+}
+
+#add-task button{
+    border: 1px solid #9361bf;
+    background: #1f1d5a;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    margin: 20px 0;
+    border-left: 0;
+    color: white;
+}
+
+#add-task:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*------------LISTY------------*/
+.lists-container{
+    min-height: max-content;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.list{
+    flex: 0 1 28%;
+    margin-top: 20px;
+    height:max-content;
+    position:relative;
+    border-radius: 5px;
+    
+}
+
+#to-do-list{
+    background-color: rgb(217, 217, 243);
+    margin-left:40px;
+}
+
+#in-progress-list{
+    background-color:rgb(229, 229, 248) ;
+    top:30px;
+    
+}
+
+#done-list{
+    background-color: rgb(236, 236, 240);
+    margin-right:40px;
+}
+
+@media screen and(min-width: 900px){
+    
+    
+
+}
+
+
+.list ul{
+    list-style-type: none;
+    margin:2px 5px;
+    padding:2px 10px;
+}
+
+.list li{
+    padding:8px;
+    transition: 0.2s ease-in;
+    font-size: 1em;
+    border: solid 1px transparent;
+    border-radius: 5px;
+    box-shadow: 2px 1px transparent;
+}
+
+.list li:hover{
+    font-size: 1.2em;
+    border-color: #cccc;
+    box-shadow: 2px 1px #cccc;  
+}
+
+/*-------PRZYCISKI-------*/
+
+.delete-button, .move-button{
+    display:none;
+    cursor: pointer;
+}
+
+.list li:hover > .delete-button{
+    display: inline-block;
+    background-color: #181730;
+    width:14px;
+    height: 14px;
+    margin: 5px 5px;
+    float: right;
+    border: solid 1px black;
+    border-radius: 8px;
+    transform: rotateZ(0deg);
+    transition:all 0.3s ease-in;
+}
+
+.list li:hover > .move-button{
+    display: inline-block;
+    background-color: #ccc;
+    width:14px;
+    height: 14px;
+    margin: 5px 5px;
+    float: right;
+    border: solid 1px black;
+    border-radius: 8px;
+    transform: rotateZ(0deg);
+    transition:all 0.3s ease-in;
+}
+
+
+.list li:hover >.move-button:hover{
+    transform:rotateZ(90deg);
+    border-radius: 2px;
+    width:16px;
+    height: 16px;
+    background-color: seagreen;
+}
+
+.list li:hover > .delete-button:hover{
+    transform:rotateZ(90deg);
+    border-radius: 2px;
+    width:16px;
+    height: 16px;
+    background-color: firebrick;
+}
+
+
+#done-list li:hover > .move-button{
+    display:none;
+}
+
+
+
+
+/*------------ANIMACJE------------*/
+
+/*-------PIŁKI-------*/
+.move-ball, .move-ball2{
+    height:20px;
+    width:20px;
+    border-radius: 10px;
+    background-color: seagreen;
+    position:absolute;
+    right:10px;
+    top:50px;
+    opacity: 0;
+}
+
+.move-ball-active{
+    animation: move 0.6s forwards linear;
+    opacity: 1;
+}
+
+
+@keyframes move{
+    0%{top: 50px; opacity:0; height: 20px; width: 20px;}
+    30%{top:80px; right:-30px; opacity:0.5; height: 10px; width: 10px;}
+    50%{top:60px; right:-70px; opacity:1; height: 10px; width: 10px;}
+    70%{top:80px; right:-110px; opacity:0.5; height: 10px; width: 10px;}
+    100%{top: 60px; right:-130px; opacity:0; height: 20px; width: 20px;}
+}
+
+.add-ball{
+    width:20px;
+    height:20px;
+    background-color: midnightblue;
+    position:absolute;
+    border-radius:10px;
+    top:120px;
+    right:600px;
+    opacity: 0;
+}  
+
+.add-ball-active{
+    animation:add 0.7s forwards ;
+    animation-timing-function: linear;
+    opacity:1;
+}
+
+
+@keyframes add{
+    0%{top:100px; right:600px; opacity:0}
+    20%{top:150px; right:650px; opacity:0.5}
+    40%{top:140px; right:750px; opacity:1; height: 10px; width: 10px;}
+    60%{top:160px; right:850px; opacity:1; height: 10px; width: 10px;}
+    80%{top:150px; right:950px; opacity:0.5}
+    100%{top:200px; right:1050px; opacity:0}
+}
+
+
+.delete-ball1, .delete-ball2, .delete-ball3{
+    height:18px;
+    width:18px;
+    border-radius: 10px;
+    background-color: maroon ;
+    position:absolute;
+    right:5px;
+    top:50px;
+    opacity:0;
+}
+
+.delete-ball-active{
+    animation: delete 0.6s forwards linear;
+    opacity: 1;
+}
+
+@keyframes delete{
+    0%{right:5px; top:50px; opacity:1}
+    25%{right:20px}
+    50%{opacity:0.5; width:10px; height:10px;}
+    75%{right:-15px;}
+    100%{top:200px; opacity:0; width:10px; height:10px; right:10px}
+}
