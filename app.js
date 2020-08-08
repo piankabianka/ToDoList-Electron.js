@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     //---------ADD A TASK
     
-        const tasksToDoToAdd = [];
+        const tasksToDoToDoToAdd = [];
         const taskInProgress=[];
         const taskDone=[];
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
             li.appendChild(moveButton);
             li.appendChild(deleteButton);
             
-            tasksToDoToAdd.push(li);
+            tasksToDoToDoToAdd.push(li);
     
             addForm.querySelector('input[type="text"]').value="";
         })
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
         addBall.addEventListener('animationend', (e)=>{
             e.target.classList.remove('add-ball-active');
             const list=document.querySelector('#to-do-list ul')
-            for(task of tasksToDoToAdd){
+            for(task of tasksToDoToDoToAdd){
                 list.appendChild(task);
             }
         })
@@ -157,50 +157,50 @@ document.addEventListener('DOMContentLoaded', function(){
             const listInProgress=document.querySelector('#in-progress-list ul');
             const listDone=document.querySelector('#done-list ul');
 
-            const tasksToDo=listToDo.getElementsByTagName('li');
-            tasksToDoArray=[];
+            const tasksToDoToDo=listToDo.getElementsByTagName('li');
+            tasksToDoToDoArray=[];
 
-            const tasksInProgress=listInProgress.getElementsByTagName('li');
-            tasksInProgressArray=[];
+            const tasksToDoInProgress=listInProgress.getElementsByTagName('li');
+            tasksToDoInProgressArray=[];
 
-            const tasksDone=listDone.getElementsByTagName('li');
-            tasksDoneArray=[];
+            const tasksToDoDone=listDone.getElementsByTagName('li');
+            tasksToDoDoneArray=[];
 
-            Array.from(tasksToDo).forEach(function(task){
-                tasksToDoArray.push(task.textContent);
+            Array.from(tasksToDoToDo).forEach(function(task){
+                tasksToDoToDoArray.push(task.textContent);
             })
 
-            Array.from(tasksInProgress).forEach(function(task){
-                tasksInProgressArray.push(task.textContent);
+            Array.from(tasksToDoInProgress).forEach(function(task){
+                tasksToDoInProgressArray.push(task.textContent);
             })
 
-            Array.from(tasksDone).forEach(function(task){
-                tasksDoneArray.push(task.textContent);
+            Array.from(tasksToDoDone).forEach(function(task){
+                tasksToDoDoneArray.push(task.textContent);
             })
 
             var fs=require('fs');
 
-            const jsnContent1=JSON.stringify(tasksToDoArray);
-            const jsnContent2=JSON.stringify(tasksInProgressArray);
-            const jsnContent3=JSON.stringify(tasksDoneArray);
+            const jsnContent1=JSON.stringify(tasksToDoToDoArray);
+            const jsnContent2=JSON.stringify(tasksToDoInProgressArray);
+            const jsnContent3=JSON.stringify(tasksToDoDoneArray);
 
 
 
-            fs.writeFile("./tasksToDo.json", jsnContent1, 'utf8', function(err){
+            fs.writeFile("./tasksToDoToDo.json", jsnContent1, 'utf8', function(err){
                 if(err){
                     console.log(err);
                 }
                 console.log("saved!");
             })
 
-            fs.writeFile("./tasksInProgress.json", jsnContent2, 'utf8', function(err){
+            fs.writeFile("./tasksToDoInProgress.json", jsnContent2, 'utf8', function(err){
                 if(err){
                     console.log(err);
                 }
                 console.log("saved!");
             })
 
-            fs.writeFile("./tasksDone.json", jsnContent3, 'utf8', function(err){
+            fs.writeFile("./tasksToDoDone.json", jsnContent3, 'utf8', function(err){
                 if(err){
                     console.log(err);
                 }
@@ -210,4 +210,62 @@ document.addEventListener('DOMContentLoaded', function(){
 
         })
     
+
+        const importButton=document.querySelector('#import-button');
+
+        importButton.addEventListener('click', function(e){
+            e.preventDefault();
+
+            var fs=require('fs');
+
+            const dataToDo=fs.readFileSync('tasksToDo.json','utf8');
+            const tasksToDo=Array.from(JSON.parse(dataToDo));
+            
+            const dataInProgress=fs.readFileSync('tasksInProgress.json','utf8');
+            const tasksInProgress=Array.from(JSON.parse(dataInProgress));
+            
+            const dataDone=fs.readFileSync('tasksDone.json','utf8');
+            const tasksDone=Array.from(JSON.parse(dataDone));
+
+
+            for(task of tasksToDo){
+                const li=document.createElement('li');
+                const deleteButton=document.createElement('button');
+                deleteButton.classList.add('delete-button');
+                const moveButton=document.createElement('button');
+                moveButton.classList.add('move-button');
+
+                li.textContent=task;
+                li.appendChild(moveButton);
+                li.appendChild(deleteButton);
+                list.appendChild(li);
+            }
+
+            for(task of tasksInProgress){
+                const li=document.createElement('li');
+                const deleteButton=document.createElement('button');
+                deleteButton.classList.add('delete-button');
+                const moveButton=document.createElement('button');
+                moveButton.classList.add('move-button');
+
+                li.textContent=task;
+                li.appendChild(moveButton);
+                li.appendChild(deleteButton);
+                listInProgress.appendChild(li);
+            }
+
+            for(task of tasksDone){
+                const li=document.createElement('li');
+                const deleteButton=document.createElement('button');
+                deleteButton.classList.add('delete-button');
+            
+
+                li.textContent=task;
+                li.appendChild(deleteButton);
+                listDone.appendChild(li);
+            }
+
+            
+
+        })
     })
