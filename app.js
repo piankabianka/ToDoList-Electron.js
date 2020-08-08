@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     //---------ADD A TASK
     
-        const tasksToDoToDoToAdd = [];
+        const tasksToAdd = [];
         const taskInProgress=[];
         const taskDone=[];
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
             li.appendChild(moveButton);
             li.appendChild(deleteButton);
             
-            tasksToDoToDoToAdd.push(li);
+            tasksToAdd.push(li);
     
             addForm.querySelector('input[type="text"]').value="";
         })
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
         addBall.addEventListener('animationend', (e)=>{
             e.target.classList.remove('add-ball-active');
             const list=document.querySelector('#to-do-list ul')
-            for(task of tasksToDoToDoToAdd){
+            for(task of tasksToAdd){
                 list.appendChild(task);
             }
         })
@@ -158,49 +158,49 @@ document.addEventListener('DOMContentLoaded', function(){
             const listDone=document.querySelector('#done-list ul');
 
             const tasksToDoToDo=listToDo.getElementsByTagName('li');
-            tasksToDoToDoArray=[];
+            tasksToDoArray=[];
 
             const tasksToDoInProgress=listInProgress.getElementsByTagName('li');
-            tasksToDoInProgressArray=[];
+            tasksInProgressArray=[];
 
             const tasksToDoDone=listDone.getElementsByTagName('li');
-            tasksToDoDoneArray=[];
+            tasksDoneArray=[];
 
             Array.from(tasksToDoToDo).forEach(function(task){
-                tasksToDoToDoArray.push(task.textContent);
+                tasksToDoArray.push(task.textContent);
             })
 
             Array.from(tasksToDoInProgress).forEach(function(task){
-                tasksToDoInProgressArray.push(task.textContent);
+                tasksInProgressArray.push(task.textContent);
             })
 
             Array.from(tasksToDoDone).forEach(function(task){
-                tasksToDoDoneArray.push(task.textContent);
+                tasksDoneArray.push(task.textContent);
             })
 
             var fs=require('fs');
 
-            const jsnContent1=JSON.stringify(tasksToDoToDoArray);
-            const jsnContent2=JSON.stringify(tasksToDoInProgressArray);
-            const jsnContent3=JSON.stringify(tasksToDoDoneArray);
+            const jsnContent1=JSON.stringify(tasksToDoArray);
+            const jsnContent2=JSON.stringify(tasksInProgressArray);
+            const jsnContent3=JSON.stringify(tasksDoneArray);
 
 
 
-            fs.writeFile("./tasksToDoToDo.json", jsnContent1, 'utf8', function(err){
+            fs.writeFileSync("./tasksToDo.json", jsnContent1, 'utf8', function(err){
                 if(err){
                     console.log(err);
                 }
                 console.log("saved!");
             })
 
-            fs.writeFile("./tasksToDoInProgress.json", jsnContent2, 'utf8', function(err){
+            fs.writeFileSync("./tasksInProgress.json", jsnContent2, 'utf8', function(err){
                 if(err){
                     console.log(err);
                 }
                 console.log("saved!");
             })
 
-            fs.writeFile("./tasksToDoDone.json", jsnContent3, 'utf8', function(err){
+            fs.writeFileSync("./tasksDone.json", jsnContent3, 'utf8', function(err){
                 if(err){
                     console.log(err);
                 }
