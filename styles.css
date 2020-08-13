@@ -202,27 +202,13 @@ body{
     
 }
 
-#save-button{
+#save-button, #import-button, #test-button{
     border: 1px solid black;
     background: #1f1d5a;
     padding: 10px 20px;
     font-size: 16px;
     margin: 0;
     border-radius: 4px;
-    cursor: pointer;
-    width: 200px;
-    margin: 20px 0;
-    
-    color: white;
-}
-
-#import-button{
-    border: 1px solid black;
-    background: #1f1d5a;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 0;
-    border-radius: 4px;;
     cursor: pointer;
     width: 200px;
     margin: 20px 0;

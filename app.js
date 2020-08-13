@@ -40,9 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         })
     
-    
-    
-    //DELETE A TASK
+    //---------DELETE A TASK
         const list=document.querySelector('#to-do-list ul');
         const listInProgress=document.querySelector('#in-progress-list ul');
         const listDone=document.querySelector('#done-list ul')
@@ -104,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
             
         })
-    
+    //---------BALLS ANIMATION AND TASKS APPENDING
         const ball = document.querySelector('.move-ball');
         ball.addEventListener('animationend', (e)=>{
             e.target.classList.remove('move-ball-active');
@@ -132,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 list.appendChild(task);
             }
         })
-    
+    //---------BALLS ANIMATION AND TASKS DELETING
         const deleteBall1=document.querySelector('.delete-ball1');
         deleteBall1.addEventListener('animationend', (e)=>{
             e.target.classList.remove('delete-ball-active');
@@ -148,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function(){
             e.target.classList.remove('delete-ball-active');
         })
         
-
+    //---------SAVING LISTS TO FILE
         const saveButton=document.querySelector('#save-button');
 
         saveButton.addEventListener('click', function(e){
@@ -210,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         })
     
-
+    //---------IMPORTING LISTS FROM FILE
         const importButton=document.querySelector('#import-button');
 
         importButton.addEventListener('click', function(e){
@@ -268,4 +266,6 @@ document.addEventListener('DOMContentLoaded', function(){
             
 
         })
+
+
     })
