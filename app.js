@@ -1,6 +1,7 @@
-  
-document.addEventListener('DOMContentLoaded', function(){
+const addon = require('./build/Release/addon.node');
 
+document.addEventListener('DOMContentLoaded', function(){
+    
     //---------ADD A TASK
     
         const tasksToAdd = [];
@@ -267,5 +268,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
         })
 
+    //---------TESTING SCRIPT
+
+        const testButoon=document.querySelector('#test-button');
+
+        testButoon.addEventListener('click', function(e){
+            e.preventDefault();
+
+            const testInput=document.querySelector('#test-input');
+            //testInput.textContent="TEST";
+            //console.log(addon)
+            
+           testInput.textContent=addon.hello();
+        })
 
     })

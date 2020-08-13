@@ -17,9 +17,12 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.1.2"
+    "electron": "^9.1.2",
+    "electron-rebuild": "^1.11.0"
   },
   "dependencies": {
-    "fs": "0.0.1-security"
+    "bcrypt": "^5.0.0",
+    "fs": "0.0.1-security",
+    "node-pre-gyp": "^0.15.0"
   }
 }
