@@ -1,4 +1,4 @@
-const addon = require('./build/Release/addon.node');
+const {IsPrime} = require('./build/Release/addon.node');
 
 document.addEventListener('DOMContentLoaded', function(){
     
@@ -276,10 +276,30 @@ document.addEventListener('DOMContentLoaded', function(){
             e.preventDefault();
 
             const testInput=document.querySelector('#test-input');
-            //testInput.textContent="TEST";
-            //console.log(addon)
             
-           testInput.textContent=addon.hello();
+            //testInput.textContent=addon.hello();
+            //const obj1 = addon('1');
+            //console.log(obj1.msg);
+
+            //console.log(Hello());
+            console.log(IsPrime(2017));
+
+            if(IsPrime(2017)){
+                testInput.textContent="Prime Number"
+            } else{
+                testInput.textContent="Not a Prime Number"
+            }
+            
         })
 
     })
+
+
+    /*
+    HOME=~/.electron-gyp node-gyp rebuild \
+  --target=9.1.2 \
+  --arch=x64 \
+  --dist-url=https://atom.io/download/electron
+    
+    
+    */

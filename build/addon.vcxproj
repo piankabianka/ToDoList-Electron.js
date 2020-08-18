@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
@@ -83,13 +83,13 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=addon;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;V8_COMPRESS_POINTERS;V8_31BIT_SMIS_ON_64BIT_ARCH;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -127,7 +127,7 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\include\node;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\src;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\config;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\openssl\openssl\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\uv\include;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\zlib;C:\Users\Bianka\AppData\Local\node-gyp\Cache\9.1.2\deps\v8\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=addon;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;V8_COMPRESS_POINTERS;V8_31BIT_SMIS_ON_64BIT_ARCH;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
